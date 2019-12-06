@@ -139,3 +139,6 @@ STATICFILES_DIRS = (
 
 LOGIN_REDIRECT_URL = 'cursos:curso_list'
 LOGOUT_REDIRECT_URL = '/'
+
+import django_heroku
+django_heroku.settings(locals())
