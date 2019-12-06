@@ -1,0 +1,40 @@
+{% extends "frontend/base.html" %}
+{% load bootstrap4 %}
+
+{% block title %}Login{% endblock title %}
+{% block  body %}
+     <!-- CONTACT -->
+     <section class="contact section-padding">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-lg-6 mx-auto col-md-7 col-12 py-5 mt-5 text-center" data-aos="fade-up">
+
+                      <h1 class="mb-4">Ingreso para el  <strong>administrador</strong></h1>
+
+                    </div>
+
+                    <div class="col-lg-8 mx-auto col-md-10 col-12">
+
+                    <!-- Follow https://templatemo.com/contact page to setup your own contact form -->
+                    <!-- Si error en credenciales -->
+                      <div class="alert" role="alert">
+                            {% bootstrap_messages %}
+                      </div>
+
+                      <form method="post" class="contact-form" data-aos="fade-up" data-aos-delay="300" role="form">
+                        <div class="">
+                          {% bootstrap_form form %}
+                          {% csrf_token %}
+                          <div class="col-lg-5 mx-auto col-7">
+                            <button type="submit" class="form-control" id="submit-button" name="submit">Ingresar</button>
+                          </div>
+                        </div>
+
+                      </form>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+ {% endblock body %}
