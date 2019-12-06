@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 
@@ -40,3 +40,8 @@ def login_page(request):
             messages.error(request, 'Credenciales no validas, solo puede ingresar un administrador.')
 
     return render(request, 'frontend/login.html', {'form': form})
+
+
+def cerrar_sesion(request):
+    logout(request)
+    return redirect('index')
